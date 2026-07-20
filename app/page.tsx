@@ -2,6 +2,8 @@
 
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 import documentMeta from "./data/document-meta.json";
+import { parseAnswerBlocks } from "./lib/answer-format";
+import { downloadTableWorkbook } from "./lib/xlsx";
 
 type Source = {
   documentId: string;
@@ -26,52 +28,76 @@ const suggestedQuestions = [
   "Give me a summary of the BHRC meeting held on March 24, 2026.",
   "What decisions were recorded in the 33rd BHRC meeting?",
   "Compare the main HR matters discussed across all five meetings.",
-  "Who attended the 32nd BHRC meeting?",
+  "How many attendees were recorded for each meeting? Show me a table.",
 ];
 
 function makeId() {
   return globalThis.crypto?.randomUUID?.() ?? `${Date.now()}-${Math.random()}`;
 }
 
-function InlineAnswer({
+function AnswerContent({
   text,
-  sources = [],
+  pending = false,
 }: {
   text: string;
-  sources?: Source[];
+  pending?: boolean;
 }) {
-  const parts = text.split(/(\[BHRC\s+\d+,\s*p\.\s*\d+\])/gi);
+  const blocks = parseAnswerBlocks(text);
 
   return (
     <div className="answer-copy">
-      {parts.map((part, index) => {
-        const match = part.match(/\[BHRC\s+(\d+),\s*p\.\s*(\d+)\]/i);
-        if (!match) return <span key={`${part}-${index}`}>{part}</span>;
-
-        const source = sources.find(
-          (item) =>
-            item.meetingNumber === Number(match[1]) &&
-            item.page === Number(match[2]),
-        );
-        if (!source) {
+      {blocks.map((block, index) => {
+        if (block.type === "text") {
           return (
-            <span className="inline-citation" key={`${part}-${index}`}>
-              {part}
-            </span>
+            <div className="answer-text" key={`text-${index}`}>
+              {block.text}
+            </div>
           );
         }
 
+        const tableNumber =
+          blocks.slice(0, index + 1).filter((item) => item.type === "table")
+            .length;
+
         return (
-          <a
-            className="inline-citation"
-            href={source.href}
-            key={`${part}-${index}`}
-            rel="noreferrer"
-            target="_blank"
-            title={`Open ${source.label}`}
-          >
-            {part}
-          </a>
+          <section className="answer-table-card" key={`table-${index}`}>
+            <div className="answer-table-toolbar">
+              <span>Table</span>
+              {!pending && (
+                <button
+                  onClick={() =>
+                    downloadTableWorkbook(block.table, tableNumber)
+                  }
+                  type="button"
+                >
+                  <i aria-hidden="true">↓</i>
+                  Download Excel
+                </button>
+              )}
+            </div>
+            <div className="answer-table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    {block.table.headers.map((header, headerIndex) => (
+                      <th key={`${header}-${headerIndex}`} scope="col">
+                        {header}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {block.table.rows.map((row, rowIndex) => (
+                    <tr key={`row-${rowIndex}`}>
+                      {row.map((cell, cellIndex) => (
+                        <td key={`${cell}-${cellIndex}`}>{cell}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
         );
       })}
     </div>
@@ -481,8 +507,8 @@ export default function Home() {
                     {message.role === "assistant" ? (
                       <>
                         {message.content ? (
-                          <InlineAnswer
-                            sources={message.sources}
+                          <AnswerContent
+                            pending={message.pending}
                             text={message.content}
                           />
                         ) : (
@@ -544,7 +570,7 @@ export default function Home() {
           </form>
           <p>
             Answers are generated only from the five selected minutes and
-            include page citations.
+            include a source section. Tables can be downloaded as Excel files.
           </p>
         </footer>
       </section>

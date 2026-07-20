@@ -750,22 +750,114 @@ textarea:focus-visible {
   color: #183c37;
   font-size: 14px;
   line-height: 1.75;
+}
+
+.answer-text {
   white-space: pre-wrap;
 }
 
-.inline-citation {
-  background: var(--lime-soft);
-  border-radius: 5px;
-  color: var(--teal-dark);
-  font-size: 11px;
-  font-weight: 800;
-  padding: 2px 5px;
-  text-decoration: none;
-  white-space: nowrap;
+.answer-text + .answer-table-card,
+.answer-table-card + .answer-text,
+.answer-table-card + .answer-table-card {
+  margin-top: 18px;
 }
 
-a.inline-citation:hover {
-  background: var(--lime);
+.answer-table-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(16, 47, 43, 0.06);
+  overflow: hidden;
+}
+
+.answer-table-toolbar {
+  align-items: center;
+  background: #f8faf6;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  min-height: 48px;
+  padding: 8px 11px 8px 15px;
+}
+
+.answer-table-toolbar > span {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.answer-table-toolbar button {
+  align-items: center;
+  background: var(--ink);
+  border: 0;
+  border-radius: 9px;
+  color: var(--white);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 10.5px;
+  font-weight: 750;
+  gap: 7px;
+  min-height: 32px;
+  padding: 0 11px;
+  transition:
+    background 150ms ease,
+    transform 150ms ease;
+}
+
+.answer-table-toolbar button:hover {
+  background: var(--teal);
+  transform: translateY(-1px);
+}
+
+.answer-table-toolbar button i {
+  font-size: 14px;
+  font-style: normal;
+}
+
+.answer-table-scroll {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.answer-table-card table {
+  border-collapse: collapse;
+  min-width: 100%;
+  width: max-content;
+}
+
+.answer-table-card th,
+.answer-table-card td {
+  border-bottom: 1px solid #e8ede5;
+  max-width: 360px;
+  min-width: 130px;
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+  white-space: normal;
+}
+
+.answer-table-card th {
+  background: var(--ink);
+  color: var(--white);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.answer-table-card td {
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.answer-table-card tbody tr:nth-child(even) td {
+  background: #f8faf6;
+}
+
+.answer-table-card tbody tr:last-child td {
+  border-bottom: 0;
 }
 
 .source-strip {
@@ -1066,6 +1158,16 @@ a.inline-citation:hover {
 
   .answer-copy {
     font-size: 13.5px;
+  }
+
+  .answer-table-toolbar {
+    padding-left: 12px;
+  }
+
+  .answer-table-card th,
+  .answer-table-card td {
+    min-width: 118px;
+    padding: 10px 12px;
   }
 
   .composer-wrap {

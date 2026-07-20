@@ -15,8 +15,11 @@ test("defines the BHRC Archives shell and production metadata", async () => {
   assert.match(layout, /Ask questions across five BHRC meetings/);
   assert.match(layout, /\/og\.png/);
   assert.match(page, /BHRC Archives/);
+  assert.match(page, /Download Excel/);
   assert.doesNotMatch(`${page}\n${layout}`, /BHRC Minutes Assistant|Minutes Assistant/);
   assert.match(chatRoute, /Please contact relevant departments\./);
+  assert.match(chatRoute, /Use a Markdown table whenever/);
+  assert.match(chatRoute, /SOURCE_CITATIONS/);
   assert.doesNotMatch(
     chatRoute,
     /I could not find that information in the provided BHRC minutes/,
