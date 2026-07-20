@@ -4,7 +4,7 @@ set -euo pipefail
 project_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$project_root"
 
-printf "BHRC Minutes Assistant setup\n\n"
+printf "BHRC Archives setup\n\n"
 read -r -s -p "OpenAI API key (input is hidden): " openai_api_key
 printf "\n"
 

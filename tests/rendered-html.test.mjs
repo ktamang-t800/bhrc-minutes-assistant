@@ -4,15 +4,23 @@ import test from "node:test";
 
 const templateRoot = new URL("../", import.meta.url);
 
-test("defines the BHRC assistant shell and production metadata", async () => {
-  const [page, layout] = await Promise.all([
+test("defines the BHRC Archives shell and production metadata", async () => {
+  const [page, layout, chatRoute] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/api/chat/route.ts", import.meta.url), "utf8"),
   ]);
 
-  assert.match(layout, /title: "BHRC Minutes Assistant"/);
+  assert.match(layout, /title: "BHRC Archives"/);
   assert.match(layout, /Ask questions across five BHRC meetings/);
   assert.match(layout, /\/og\.png/);
+  assert.match(page, /BHRC Archives/);
+  assert.doesNotMatch(`${page}\n${layout}`, /BHRC Minutes Assistant|Minutes Assistant/);
+  assert.match(chatRoute, /Please contact relevant departments\./);
+  assert.doesNotMatch(
+    chatRoute,
+    /I could not find that information in the provided BHRC minutes/,
+  );
   assert.match(page, /Checking access/);
   assert.match(page, /Ask the minutes\./);
   assert.doesNotMatch(`${page}\n${layout}`, /codex-preview|Your site is taking shape/i);

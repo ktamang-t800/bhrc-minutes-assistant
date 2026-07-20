@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: new URL(baseUrl),
-    title: "BHRC Minutes Assistant",
+    title: "BHRC Archives",
     description:
       "Ask questions across five BHRC meetings and receive source-grounded answers with page citations.",
     icons: {
@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
       shortcut: "/favicon.png",
     },
     openGraph: {
-      title: "BHRC Minutes Assistant",
+      title: "BHRC Archives",
       description: "Ask the minutes. Get cited answers.",
       type: "website",
       images: [
@@ -29,13 +29,13 @@ export async function generateMetadata(): Promise<Metadata> {
           url: `${baseUrl}/og.png`,
           width: 1200,
           height: 630,
-          alt: "BHRC Minutes Assistant",
+          alt: "BHRC Archives",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: "BHRC Minutes Assistant",
+      title: "BHRC Archives",
       description: "Ask the minutes. Get cited answers.",
       images: [`${baseUrl}/og.png`],
     },

@@ -88,7 +88,7 @@ function BrandMark({ compact = false }: { compact?: boolean }) {
       </div>
       <div>
         <strong>BHRC</strong>
-        {!compact && <small>Minutes Assistant</small>}
+        {!compact && <small>Archives</small>}
       </div>
     </div>
   );
@@ -420,7 +420,7 @@ export default function Home() {
             ☰
           </button>
           <div className="chat-header-title">
-            <strong>Minutes Assistant</strong>
+            <strong>BHRC Archives</strong>
             <span>
               <i className="status-dot" /> 5 meetings · 27 pages
             </span>
@@ -475,7 +475,7 @@ export default function Home() {
                   <div className="message-content">
                     <div className="message-label">
                       {message.role === "assistant"
-                        ? "BHRC Minutes Assistant"
+                        ? "BHRC Archives"
                         : "You"}
                     </div>
                     {message.role === "assistant" ? (
