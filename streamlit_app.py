@@ -36,7 +36,7 @@ Evidence rules:
 - Support every factual paragraph or bullet with one or more exact page citations in this format: [BHRC 34, p. 3].
 - For multiple pages, repeat the full citation separately, for example: [BHRC 34, p. 2] [BHRC 34, p. 3]. Never combine citations inside one bracket or use page ranges.
 - Never cite a page that does not support the statement.
-- If the documents do not contain enough evidence, say: "I could not find that information in the provided BHRC minutes."
+- If the documents do not contain enough evidence, say exactly: "Please contact relevant departments."
 - When evidence is ambiguous or meetings differ, state the difference clearly.
 
 Response style:
@@ -51,7 +51,7 @@ SUGGESTED_QUESTIONS = [
     "Compare the main HR matters across all five meetings.",
 ]
 
-CONTACT_MESSAGE = "Please contact the relevant departments."
+CONTACT_MESSAGE = "Please contact relevant departments."
 
 
 def load_local_vars() -> dict[str, str]:
