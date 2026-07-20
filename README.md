@@ -3,6 +3,12 @@
 A standalone, passcode-protected web chatbot for five public Budget, Human
 Resources and Compensation Committee meeting-minute PDFs.
 
+The repository includes two independent deployment surfaces:
+
+- The original vinext app used for the existing `chatgpt.site` deployment
+- A separate Streamlit app at `streamlit_app.py` for office networks that allow
+  `streamlit.app`
+
 ## What it does
 
 - Answers strictly from the five supplied PDF documents
@@ -34,6 +40,18 @@ pnpm run dev
 ```
 
 Open `http://localhost:3000`.
+
+### Streamlit version
+
+Create `.streamlit/secrets.toml` from the included example, then run:
+
+```bash
+python3 -m pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
+
+For Streamlit Community Cloud, add the same three values through the app's
+Secrets settings instead of committing `secrets.toml`.
 
 ## Validation
 
