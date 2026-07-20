@@ -26,7 +26,7 @@ DOCUMENTS_BY_MEETING = {
     int(document["meetingNumber"]): document for document in DOCUMENTS
 }
 
-ASSISTANT_INSTRUCTIONS = """Role: You are the BHRC Minutes Assistant.
+ASSISTANT_INSTRUCTIONS = """Role: You are BHRC Archives.
 
 Goal: Answer the user's question using only the supplied DOCUMENT LIBRARY.
 
@@ -50,6 +50,8 @@ SUGGESTED_QUESTIONS = [
     "What organizational changes did the Committee recommend?",
     "Compare the main HR matters across all five meetings.",
 ]
+
+CONTACT_MESSAGE = "Please contact the relevant departments."
 
 
 def load_local_vars() -> dict[str, str]:
@@ -246,7 +248,7 @@ def render_brand(compact: bool = False) -> None:
           </div>
           <div class="brand-copy">
             <strong>BHRC</strong>
-            <small>Minutes Assistant</small>
+            <small>Archives</small>
           </div>
         </div>
         """,
@@ -255,7 +257,7 @@ def render_brand(compact: bool = False) -> None:
 
 
 st.set_page_config(
-    page_title="BHRC Minutes Assistant",
+    page_title="BHRC Archives",
     page_icon="◈",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -593,7 +595,7 @@ if not st.session_state.authenticated:
             st.session_state.authenticated = True
             st.rerun()
         else:
-            st.error("That passcode is not correct.")
+            st.error(CONTACT_MESSAGE)
     st.caption("Access is limited to people who know the shared passcode.")
     st.markdown("</div>", unsafe_allow_html=True)
     st.stop()
@@ -706,5 +708,5 @@ if prompt:
                     "sources": sources,
                 }
             )
-        except (RuntimeError, ValueError, json.JSONDecodeError) as error:
-            st.error(str(error))
+        except (RuntimeError, ValueError, json.JSONDecodeError):
+            st.error(CONTACT_MESSAGE)

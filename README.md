@@ -1,4 +1,4 @@
-# BHRC Minutes Assistant
+# BHRC Archives
 
 A standalone, passcode-protected web chatbot for five public Budget, Human
 Resources and Compensation Committee meeting-minute PDFs.

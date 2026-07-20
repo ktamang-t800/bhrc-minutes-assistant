@@ -14,6 +14,12 @@ class StreamlitSourceTests(unittest.TestCase):
         self.assertIn("hmac.compare_digest", source)
         self.assertIn("https://api.openai.com/v1/responses", source)
         self.assertIn("gpt-5-mini", source)
+        self.assertIn('page_title="BHRC Archives"', source)
+        self.assertIn(
+            'CONTACT_MESSAGE = "Please contact the relevant departments."',
+            source,
+        )
+        self.assertNotIn("That passcode is not correct.", source)
 
     def test_five_documents_are_available_as_static_sources(self):
         metadata = json.loads(
