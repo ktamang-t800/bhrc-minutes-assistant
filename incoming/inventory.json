@@ -1,0 +1,268 @@
+{
+  "targetDocumentCount": 34,
+  "nextExpectedMeetingNumber": 35,
+  "existingMeetingNumbers": [30, 31, 32, 33, 34],
+  "receivedDocuments": [
+    {
+      "meetingNumber": 29,
+      "meetingDate": "2024-12-06",
+      "pageCount": 6,
+      "originalFilename": "20251206-Minutes-of-the-29th-BHRC-Meeting.pdf",
+      "sha256": "5f54a0dc5824e7b72a69173f95674ba10627e40d5a39a5a50e27511df07f034b",
+      "status": "verified-new",
+      "note": "The filename prefix suggests 2025, but the document title states December 6, 2024."
+    },
+    {
+      "meetingNumber": 28,
+      "meetingDate": "2024-08-28",
+      "pageCount": 6,
+      "originalFilename": "Minutes-of-the-28th-BHRC-Meeting.pdf",
+      "sha256": "b511908a96a2638a90f5f10c23d055978a5af47615bd1a8a9af59043a46d0749",
+      "status": "verified-new",
+      "note": "Held in Cape Town, South Africa."
+    },
+    {
+      "meetingNumber": 27,
+      "meetingDate": "2024-06-21",
+      "pageCount": 6,
+      "originalFilename": "2024_BHRC28_AI04_003-Minutes-of-the-27th-BHRC-Meeting.pdf",
+      "sha256": "575060d1e6932430b73c3e9b9a370e0611445e50af87018ec348c2c3f43cbfcf",
+      "status": "verified-new",
+      "note": "Videoconference meeting."
+    },
+    {
+      "meetingNumber": 26,
+      "meetingDate": "2024-03-21",
+      "pageCount": 5,
+      "originalFilename": "20240321-Minutes-of-the-26th-BHRC-Meeting.pdf",
+      "sha256": "c4bfa58e23b010f021be7c1aed4cbf22e34516f3975b31fe4a8ab4d180ab7431",
+      "status": "verified-new",
+      "note": "Held at 10:00 China Standard Time."
+    },
+    {
+      "meetingNumber": 25,
+      "meetingDate": "2023-11-27",
+      "pageCount": 6,
+      "originalFilename": "20231127-Minutes-of-the-25th-BHRC-Meeting.pdf",
+      "sha256": "7a6afad7a28cd560355a74850bcdb67d00a27a244fcb57f7b996d00370c5f509",
+      "status": "verified-new",
+      "note": "Held in Dubai, United Arab Emirates."
+    },
+    {
+      "meetingNumber": 24,
+      "meetingDate": "2023-09-13",
+      "pageCount": 5,
+      "originalFilename": "Minutes-of-the-24th-BHRC-Meeting.pdf",
+      "sha256": "9d6908383d7d159aefd7dab8254d988f05b1d473bdbbed9dbcf7060f452dc0f3",
+      "status": "verified-new",
+      "note": "Held at 10:00 China Standard Time."
+    },
+    {
+      "meetingNumber": 23,
+      "meetingDate": "2023-05-29",
+      "pageCount": 4,
+      "originalFilename": "Minutes-of-the-23rd-BHRC-Meeting.pdf",
+      "sha256": "2b7a7d076e7de1579f2bb81c657e9db198f2bbc656eee95033602d444430c9bd",
+      "status": "verified-new",
+      "note": "Held at 11:15 China Standard Time."
+    },
+    {
+      "meetingNumber": 22,
+      "meetingDate": "2023-04-24",
+      "pageCount": 6,
+      "originalFilename": "Minutes-of-the-22nd-BHRC-Meeting.pdf",
+      "sha256": "80b9dbffbe4236e7bb12f6f78a2db2db7dda1a608c85aad065255bf2cc336431",
+      "status": "verified-new",
+      "note": "Held at 15:30 China Standard Time."
+    },
+    {
+      "meetingNumber": 21,
+      "meetingDate": "2022-12-07",
+      "pageCount": 5,
+      "originalFilename": "Minutes-of-the-21st-BHRC-Meeting.pdf",
+      "sha256": "c122d294d50cadbfa1f9ad47dbf3052b8827b83e1cf84df7be7f9f8762a41a8d",
+      "status": "verified-new",
+      "note": "Videoconference held at 19:00 China Standard Time."
+    },
+    {
+      "meetingNumber": 20,
+      "meetingDate": "2022-09-15",
+      "pageCount": 4,
+      "originalFilename": "Minutes-of-the-20th-BHRC-Meeting.pdf",
+      "sha256": "6d8aa7d2b9b7ccb5c8c0d4f194f9e0eec3e9eaad24648170ec5d3da4c01daa82",
+      "status": "verified-new",
+      "note": "Videoconference held at 19:00 China Standard Time."
+    },
+    {
+      "meetingNumber": 19,
+      "meetingDate": "2022-06-22",
+      "pageCount": 4,
+      "originalFilename": "Minutes-of-the-19th-BHRC-Meeting.pdf",
+      "sha256": "3a2de757c5120174a69848fde785d9280f6d42ed640c367d4b94cfdd79ca22fe",
+      "status": "verified-new",
+      "note": "Videoconference held at 19:00 China Standard Time."
+    },
+    {
+      "meetingNumber": 18,
+      "meetingDate": "2022-03-11",
+      "pageCount": 5,
+      "originalFilename": "Minutes-of-the-18th-BHRC-Meeting.pdf",
+      "sha256": "3502ef3aa07a54b4308a00a75356296cf09593a4d4e680290e8a3b2b50c3ff8d",
+      "status": "verified-new",
+      "note": "Videoconference held at 19:00 China Standard Time."
+    },
+    {
+      "meetingNumber": 17,
+      "meetingDate": "2021-12-13",
+      "pageCount": 5,
+      "originalFilename": "Minutes-of-the-17th-BHRC-Meeting.pdf",
+      "sha256": "c3b3b243f788003d426ef632cd4ba1008ff5b92d31f34ce33d3c34f284cd59c2",
+      "status": "verified-new",
+      "note": "Videoconference held at 20:30 China Standard Time."
+    },
+    {
+      "meetingNumber": 16,
+      "meetingDate": "2021-09-22",
+      "pageCount": 5,
+      "originalFilename": "Minutes-of-the-16th-BHRC-Meeting.pdf",
+      "sha256": "dbc9d3c93c21f99b3bcce12447c582da3432075c2cd286825fcf6d25ca8dfb41",
+      "status": "verified-new",
+      "note": "Videoconference held at 21:30 China Standard Time."
+    },
+    {
+      "meetingNumber": 15,
+      "meetingDate": "2021-06-28",
+      "pageCount": 5,
+      "originalFilename": "Minutes-of-the-15th-BHRC-Meeting-1.pdf",
+      "sha256": "8e04ffff9fab06d5d3746b96b037194fcefe18d5da3d499cbb4c6c3f060e0ba8",
+      "status": "verified-new",
+      "note": "Videoconference held at 21:00 China Standard Time."
+    },
+    {
+      "meetingNumber": 14,
+      "meetingDate": "2021-03-29",
+      "pageCount": 5,
+      "originalFilename": "Minutes-of-the-14th-BHRC-Meeting_.pdf",
+      "sha256": "e92d7d861f1225e9afa18eef349abcb314f6b706867e9b6c908b752a667b19bb",
+      "status": "verified-new",
+      "note": "Videoconference held at 20:00 China Standard Time."
+    },
+    {
+      "meetingNumber": 13,
+      "meetingDate": "2020-12-14",
+      "pageCount": 5,
+      "originalFilename": "Minutes-of-the-13th-BHRC-Meeting.pdf",
+      "sha256": "b0ffff94906826591722fa6986dbb2e0ae5d143ffe70c8fb702a3230f774ebaa",
+      "status": "verified-new",
+      "note": "Videoconference held at 19:00 Shanghai time."
+    },
+    {
+      "meetingNumber": 12,
+      "meetingDate": "2020-09-28",
+      "pageCount": 4,
+      "originalFilename": "Minutes-of-the-12th-BHRC-Meeting.pdf",
+      "sha256": "463922c897a0cc97090de6f11fc3049c8b156ab5229b82915977075a5dfe4e17",
+      "status": "verified-new",
+      "note": "Videoconference held at 19:00 Shanghai time."
+    },
+    {
+      "meetingNumber": 11,
+      "meetingDate": "2020-06-29",
+      "pageCount": 4,
+      "originalFilename": "Minutes-of-the-11th-BHRC-Meeting.pdf",
+      "sha256": "ea8935aca6701710b356fffe4e296eb433a1df67ffa003b4a6588401dbf3ff13",
+      "status": "verified-new",
+      "note": "Videoconference held at 19:00 Shanghai time."
+    },
+    {
+      "meetingNumber": 10,
+      "meetingDate": "2020-05-25",
+      "pageCount": 2,
+      "originalFilename": "Minutes-of-the-10th-BHRC-Meeting.pdf",
+      "sha256": "eac0d866891753dfc9ab5f42811579cf2cabd8d4fa20ed5d69086768f6752d28",
+      "status": "verified-new",
+      "note": "Videoconference held at 18:45 Shanghai time."
+    },
+    {
+      "meetingNumber": 9,
+      "meetingDate": "2020-03-24",
+      "pageCount": 4,
+      "originalFilename": "Minutes-of-the-9th-BHRC-Meeting.pdf",
+      "sha256": "949640a58ac23508845909e0a8f0e070843c4855f1745a275fdbbbc448d09bad",
+      "status": "verified-new",
+      "note": "Videoconference held at 19:00 Shanghai time."
+    },
+    {
+      "meetingNumber": 8,
+      "meetingDate": "2019-12-02",
+      "pageCount": 4,
+      "originalFilename": "Minutes-of-the-8th-BHRC-Meeting.pdf",
+      "sha256": "4d52f6b330c74d6ba36f6bbcfaf3bb050f55b39d2475cacff9ec63b236ef7eef",
+      "status": "verified-new",
+      "note": "Held in Shanghai at 11:00."
+    },
+    {
+      "meetingNumber": 7,
+      "meetingDate": "2019-09-11",
+      "pageCount": 4,
+      "originalFilename": "Minutes-of-the-7th-BHRC-Meeting.pdf",
+      "sha256": "c8b11b46485203761a9242621e1d6ec5ff0c5dbf164950af247441450c7e466e",
+      "status": "verified-new",
+      "note": "Held in Shanghai at 13:30."
+    },
+    {
+      "meetingNumber": 6,
+      "meetingDate": "2019-06-24",
+      "pageCount": 3,
+      "originalFilename": "Minutes-of-the-6th-BHRC-Meeting.pdf",
+      "sha256": "c7ec5f6b0aca1c99cb17ad22b3abbd58fe85565aa27bb23f28740ecb2feedeb4",
+      "status": "verified-new",
+      "note": "Held in Shanghai at 16:30."
+    },
+    {
+      "meetingNumber": 5,
+      "meetingDate": "2019-03-31",
+      "pageCount": 4,
+      "originalFilename": "Minutes-of-the-5th-BHRC-Meeting.pdf",
+      "sha256": "5f2e2534a2348721c3e0ed8bddbe76579df57e8a4ed73b89af493c73752bac9f",
+      "status": "verified-new",
+      "note": "Held in Cape Town, South Africa, at 11:00."
+    },
+    {
+      "meetingNumber": 4,
+      "meetingDate": "2018-11-15",
+      "pageCount": 3,
+      "originalFilename": "Minutes-of-the-4th-BHRC-Meeting.pdf",
+      "sha256": "3c0e26bce351859fb7a1b747114107729b343d80573b1e967993a5f10f8d8a56",
+      "status": "verified-new",
+      "note": "Held in Shanghai, China, at 16:00."
+    },
+    {
+      "meetingNumber": 3,
+      "meetingDate": "2018-09-17",
+      "pageCount": 4,
+      "originalFilename": "Minutes-of-the-3rd-BHRC-Meeting.pdf",
+      "sha256": "88ef90e738cbf2866da8de68e87b1d6f3e8141bb4ca961ce4ac506eac43b3f18",
+      "status": "verified-new",
+      "note": "Held in Shanghai, China, at 15:00."
+    },
+    {
+      "meetingNumber": 2,
+      "meetingDate": "2018-05-28",
+      "pageCount": 4,
+      "originalFilename": "Minutes-of-the-2nd-BHRC-Meeting.pdf",
+      "sha256": "9f905fb9a33288c37a88104588d7d6a69bacd1c3855e63615231a8a0356df2f4",
+      "status": "verified-new",
+      "note": "Held in Shanghai, China, at 09:00."
+    },
+    {
+      "meetingNumber": 1,
+      "meetingDate": "2018-03-01",
+      "pageCount": 4,
+      "originalFilename": "Minutes-of-the-1st-BHRC-Meeting.pdf",
+      "sha256": "2dd3bdfe598d092e301429ce26d2df1c09a2d115af9bc24ba0bb2f5f413649f3",
+      "status": "verified-new",
+      "note": "Held in Shanghai, China, at 14:00."
+    }
+  ]
+}

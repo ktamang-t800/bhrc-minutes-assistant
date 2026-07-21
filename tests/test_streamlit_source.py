@@ -25,14 +25,14 @@ class StreamlitSourceTests(unittest.TestCase):
             source,
         )
 
-    def test_five_documents_are_available_as_static_sources(self):
+    def test_all_documents_are_available_as_static_sources(self):
         metadata = json.loads(
             (ROOT / "app" / "data" / "document-meta.json").read_text(
                 encoding="utf-8"
             )
         )
-        self.assertEqual(len(metadata), 5)
-        self.assertEqual(sum(item["pageCount"] for item in metadata), 27)
+        self.assertEqual(len(metadata), 34)
+        self.assertEqual(sum(item["pageCount"] for item in metadata), 158)
         for document in metadata:
             self.assertTrue(
                 (ROOT / "static" / "documents" / document["file"]).exists()

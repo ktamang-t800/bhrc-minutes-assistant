@@ -15,14 +15,14 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(baseUrl),
     title: "BHRC Archives",
     description:
-      "Ask questions across five BHRC meetings and receive source-grounded answers with page citations.",
+      "Ask questions across 34 BHRC meetings and receive source-grounded answers, tables, charts, and page citations.",
     icons: {
       icon: "/favicon.png",
       shortcut: "/favicon.png",
     },
     openGraph: {
       title: "BHRC Archives",
-      description: "Ask the minutes. Get cited answers.",
+      description: "Ask the minutes. Get cited answers, tables, and charts.",
       type: "website",
       images: [
         {
@@ -36,7 +36,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: "BHRC Archives",
-      description: "Ask the minutes. Get cited answers.",
+      description: "Ask the minutes. Get cited answers, tables, and charts.",
       images: [`${baseUrl}/og.png`],
     },
     robots: {

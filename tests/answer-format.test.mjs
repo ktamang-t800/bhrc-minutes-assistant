@@ -59,3 +59,27 @@ test("builds a downloadable Excel workbook from a response table", () => {
   assert.match(contents, /Recorded attendees/);
   assert.match(contents, /BHRC 31/);
 });
+
+test("parses requested chart metadata and attaches it to its table", () => {
+  const answer = `Attendance by meeting:
+
+| Meeting | Recorded attendees |
+| --- | ---: |
+| BHRC 33 | 14 |
+| BHRC 34 | 16 |
+
+CHART_SPEC: {"type":"bar","title":"Recorded attendees by meeting","tableIndex":1,"labelColumn":"Meeting","valueColumns":["Recorded attendees"]}
+SOURCE_CITATIONS: [BHRC 33, p. 1] [BHRC 34, p. 1]`;
+
+  const blocks = parseAnswerBlocks(answer);
+  assert.equal(blocks.length, 3);
+  assert.equal(blocks[2].type, "chart");
+  assert.deepEqual(blocks[2].chart, {
+    type: "bar",
+    title: "Recorded attendees by meeting",
+    tableIndex: 1,
+    labelColumn: "Meeting",
+    valueColumns: ["Recorded attendees"],
+  });
+  assert.doesNotMatch(JSON.stringify(blocks), /CHART_SPEC|SOURCE_CITATIONS/);
+});

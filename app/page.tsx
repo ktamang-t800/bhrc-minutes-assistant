@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
+import { AnswerChartCard } from "./components/answer-chart";
 import documentMeta from "./data/document-meta.json";
 import { parseAnswerBlocks } from "./lib/answer-format";
 import { downloadTableWorkbook } from "./lib/xlsx";
@@ -26,10 +27,16 @@ type AccessState = "checking" | "locked" | "ready";
 
 const suggestedQuestions = [
   "Give me a summary of the BHRC meeting held on March 24, 2026.",
-  "What decisions were recorded in the 33rd BHRC meeting?",
-  "Compare the main HR matters discussed across all five meetings.",
-  "How many attendees were recorded for each meeting? Show me a table.",
+  "Compare the main HR matters discussed across the archived meetings.",
+  "How many attendees were recorded for each meeting? Show a table and bar chart.",
+  "Show the recorded attendee trend over time as a line chart.",
 ];
+
+const meetingCount = documentMeta.length;
+const pageCount = documentMeta.reduce(
+  (total, document) => total + document.pageCount,
+  0,
+);
 
 function makeId() {
   return globalThis.crypto?.randomUUID?.() ?? `${Date.now()}-${Math.random()}`;
@@ -52,6 +59,16 @@ function AnswerContent({
             <div className="answer-text" key={`text-${index}`}>
               {block.text}
             </div>
+          );
+        }
+
+        if (block.type === "chart") {
+          return (
+            <AnswerChartCard
+              chart={block.chart}
+              key={`chart-${index}`}
+              table={block.table}
+            />
           );
         }
 
@@ -169,7 +186,8 @@ function LockScreen({ onUnlocked }: { onUnlocked: () => void }) {
         <p className="eyebrow">Private document assistant</p>
         <h1>Welcome to the minutes.</h1>
         <p className="lock-copy">
-          Enter the shared passcode to ask questions across five BHRC meetings.
+          Enter the shared passcode to ask questions across {meetingCount} BHRC
+          meetings.
         </p>
         <form className="lock-form" onSubmit={unlock}>
           <label htmlFor="passcode">Shared passcode</label>
@@ -422,7 +440,7 @@ export default function Home() {
             <span className="status-dot" />
             <strong>Source-grounded</strong>
           </div>
-          <p>Answers use these five documents only.</p>
+          <p>Answers use these {meetingCount} documents only.</p>
         </div>
       </aside>
 
@@ -448,7 +466,8 @@ export default function Home() {
           <div className="chat-header-title">
             <strong>BHRC Archives</strong>
             <span>
-              <i className="status-dot" /> 5 meetings · 27 pages
+              <i className="status-dot" /> {meetingCount} meetings · {pageCount}{" "}
+              pages
             </span>
           </div>
           <button className="logout-button" onClick={logout} type="button">
@@ -463,14 +482,16 @@ export default function Home() {
                 <span />
                 <span />
                 <span />
-                <b>5</b>
+                <b>{meetingCount}</b>
               </div>
-              <p className="eyebrow">Five meetings. One conversation.</p>
+              <p className="eyebrow">
+                {meetingCount} meetings. One conversation.
+              </p>
               <h1>Ask the minutes.</h1>
               <p className="welcome-copy">
-                Get clear, cited answers across 27 pages of BHRC source
-                material. If it is not in the minutes, the assistant will say
-                so.
+                Get clear, cited answers across {pageCount} pages of BHRC source
+                material. Ask for tables, Excel downloads, or visual charts. If
+                it is not in the minutes, the assistant will say so.
               </p>
               <div className="suggestion-grid">
                 {suggestedQuestions.map((question, index) => (
@@ -569,8 +590,9 @@ export default function Home() {
             </button>
           </form>
           <p>
-            Answers are generated only from the five selected minutes and
-            include a source section. Tables can be downloaded as Excel files.
+            Answers use only the {meetingCount} archived minutes and include a
+            source section. Tables can be downloaded as Excel files; charts are
+            created when requested.
           </p>
         </footer>
       </section>

@@ -3,9 +3,18 @@ export type AnswerTable = {
   rows: string[][];
 };
 
+export type AnswerChart = {
+  type: "bar" | "line" | "pie";
+  title: string;
+  tableIndex: number;
+  labelColumn: string;
+  valueColumns: string[];
+};
+
 export type AnswerBlock =
   | { type: "text"; text: string }
-  | { type: "table"; table: AnswerTable };
+  | { type: "table"; table: AnswerTable }
+  | { type: "chart"; chart: AnswerChart; table: AnswerTable };
 
 const citationPattern =
   /\s*\[BHRC\s+\d+,\s*(?:p\.?|pages?)\s*\d+(?:\s*[–—-]\s*\d+)?\]/gi;
@@ -13,10 +22,41 @@ const citationPattern =
 export function stripSourceCitations(text: string) {
   return text
     .split(/\r?\n/)
-    .filter((line) => !/^\s*SOURCE_CITATIONS\s*:/i.test(line))
+    .filter(
+      (line) =>
+        !/^\s*SOURCE_CITATIONS\s*:/i.test(line) &&
+        !/^\s*CHART_SPEC\s*:/i.test(line),
+    )
     .map((line) => line.replace(citationPattern, "").trimEnd())
     .join("\n")
     .trim();
+}
+
+function parseChartSpecs(text: string): AnswerChart[] {
+  const specs: AnswerChart[] = [];
+  for (const line of text.split(/\r?\n/)) {
+    const match = line.match(/^\s*CHART_SPEC\s*:\s*(\{.*\})\s*$/i);
+    if (!match) continue;
+    try {
+      const value = JSON.parse(match[1]) as Partial<AnswerChart>;
+      if (
+        !["bar", "line", "pie"].includes(value.type ?? "") ||
+        typeof value.title !== "string" ||
+        !Number.isInteger(value.tableIndex) ||
+        Number(value.tableIndex) < 1 ||
+        typeof value.labelColumn !== "string" ||
+        !Array.isArray(value.valueColumns) ||
+        !value.valueColumns.length ||
+        !value.valueColumns.every((column) => typeof column === "string")
+      ) {
+        continue;
+      }
+      specs.push(value as AnswerChart);
+    } catch {
+      // Ignore malformed or incomplete streamed chart metadata.
+    }
+  }
+  return specs;
 }
 
 function splitTableRow(line: string) {
@@ -68,6 +108,7 @@ function normalizeRow(cells: string[], width: number) {
 }
 
 export function parseAnswerBlocks(text: string): AnswerBlock[] {
+  const chartSpecs = parseChartSpecs(text);
   const lines = stripSourceCitations(text).split("\n");
   const blocks: AnswerBlock[] = [];
   const textBuffer: string[] = [];
@@ -104,5 +145,39 @@ export function parseAnswerBlocks(text: string): AnswerBlock[] {
   }
 
   flushText();
-  return blocks;
+
+  if (!chartSpecs.length) return blocks;
+
+  const tables = blocks.filter(
+    (block): block is Extract<AnswerBlock, { type: "table" }> =>
+      block.type === "table",
+  );
+  const chartsByTable = new Map<number, AnswerChart[]>();
+
+  for (const chart of chartSpecs) {
+    const table = tables[chart.tableIndex - 1]?.table;
+    if (
+      !table ||
+      !table.headers.includes(chart.labelColumn) ||
+      !chart.valueColumns.every((column) => table.headers.includes(column)) ||
+      (chart.type === "pie" && chart.valueColumns.length !== 1)
+    ) {
+      continue;
+    }
+    const current = chartsByTable.get(chart.tableIndex) ?? [];
+    current.push(chart);
+    chartsByTable.set(chart.tableIndex, current);
+  }
+
+  const output: AnswerBlock[] = [];
+  let tableIndex = 0;
+  for (const block of blocks) {
+    output.push(block);
+    if (block.type !== "table") continue;
+    tableIndex += 1;
+    for (const chart of chartsByTable.get(tableIndex) ?? []) {
+      output.push({ type: "chart", chart, table: block.table });
+    }
+  }
+  return output;
 }

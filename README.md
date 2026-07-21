@@ -1,6 +1,6 @@
 # BHRC Archives
 
-A standalone, passcode-protected web chatbot for five public Budget, Human
+A standalone, passcode-protected web chatbot for 34 public Budget, Human
 Resources and Compensation Committee meeting-minute PDFs.
 
 The repository includes two independent deployment surfaces:
@@ -11,11 +11,13 @@ The repository includes two independent deployment surfaces:
 
 ## What it does
 
-- Answers strictly from the five supplied PDF documents
+- Answers strictly from the 34 supplied PDF documents
 - Streams conversational answers
 - Adds exact meeting and page citations
 - Opens cited PDF pages directly
 - Refuses to guess when the documents do not contain the answer
+- Generates tables and downloadable Excel workbooks
+- Generates bar, line, and pie charts when requested
 - Uses a shared passcode without individual accounts
 - Works on desktop and mobile browsers
 
@@ -64,12 +66,9 @@ node --test tests/rendered-html.test.mjs
 
 ## Updating source documents
 
-Place replacement PDFs in a source directory using the expected filenames,
+Add verified PDFs to `incoming/` and record them in `incoming/inventory.json`,
 then regenerate the page-level corpus and public PDF copies:
 
 ```bash
-python3 scripts/extract_documents.py /path/to/source-pdfs "$PWD"
+python3 scripts/extract_documents.py "$PWD"
 ```
-
-The first version is intentionally optimized for five documents. If the library
-grows substantially, replace the all-document context with indexed retrieval.

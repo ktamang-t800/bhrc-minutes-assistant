@@ -48,7 +48,7 @@ Response style:
 SUGGESTED_QUESTIONS = [
     "Summarize the BHRC meeting held on March 24, 2026.",
     "What organizational changes did the Committee recommend?",
-    "Compare the main HR matters across all five meetings.",
+    "Compare the main HR matters across the archived meetings.",
 ]
 
 CONTACT_MESSAGE = "Please contact relevant departments."
@@ -101,7 +101,7 @@ def extract_sources(answer: str) -> list[dict[str, object]]:
     sources: list[dict[str, object]] = []
     seen: set[str] = set()
     pattern = re.compile(
-        r"BHRC\s+(30|31|32|33|34),\s*(?:p\.?|pages?)\s*"
+        r"BHRC\s+(\d{1,2}),\s*(?:p\.?|pages?)\s*"
         r"(\d+)(?:\s*[–—-]\s*(\d+))?",
         re.IGNORECASE,
     )
@@ -574,7 +574,7 @@ if not st.session_state.authenticated:
         """
         <div class="eyebrow">Private document workspace</div>
         <h1>Ask the minutes.</h1>
-        <p>Enter the shared passcode to access cited answers across five BHRC
+        <p>Enter the shared passcode to access cited answers across {len(DOCUMENTS)} BHRC
         meeting records.</p>
         """,
         unsafe_allow_html=True,
@@ -624,7 +624,7 @@ with st.sidebar:
     st.markdown(
         """
         <div class="trust-note">
-          Answers are generated only from the five supplied minutes. Every
+          Answers are generated only from the {len(DOCUMENTS)} supplied minutes. Every
           factual answer should include a meeting and page citation.
         </div>
         """,
@@ -642,7 +642,7 @@ with st.sidebar:
 st.markdown(
     """
     <section class="hero">
-      <span class="eyebrow">Five meetings · One cited answer</span>
+      <span class="eyebrow">{len(DOCUMENTS)} meetings · One cited answer</span>
       <h1>Ask the minutes.<br><em>Get the evidence.</em></h1>
       <p>Explore BHRC decisions, discussions and follow-up actions through a
       focused assistant that answers strictly from the meeting records.</p>

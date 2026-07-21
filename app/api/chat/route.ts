@@ -35,6 +35,11 @@ Response style:
 - Use a Markdown table whenever the question asks for counts, attendance, comparisons, lists across meetings, or other naturally tabular results.
 - Markdown tables must use a header row, a separator row with hyphens, and one complete data row per item. Never draw ASCII tables with plus signs or dashed box borders.
 - For attendee counts, count only people explicitly recorded as attending in the relevant meeting minutes and make the counting basis clear.
+- When the user asks for a chart, first provide the complete supporting Markdown table. Then add exactly one single-line chart instruction immediately before SOURCE_CITATIONS using this format:
+  CHART_SPEC: {"type":"bar","title":"Recorded attendees by meeting","tableIndex":1,"labelColumn":"Meeting","valueColumns":["Recorded attendees"]}
+- Allowed chart types are bar, line, and pie. Use line for ordered trends over time, bar for comparisons, and pie only for shares across two to eight categories.
+- tableIndex is one-based. labelColumn and every valueColumns entry must exactly match headers in the referenced table. Chart value columns must contain plain numeric values.
+- Do not output CHART_SPEC unless the user asks for a chart or visualization.
 - Do not write a bibliography or a visible Sources section; the interface will display the final SOURCE_CITATIONS line separately.`;
 
 function clientIdentifier(request: Request) {
@@ -98,7 +103,7 @@ function extractSources(answer: string) {
   }> = [];
   const seen = new Set<string>();
   const citationPattern =
-    /BHRC\s+(30|31|32|33|34),\s*(?:p\.?|pages?)\s*(\d+)(?:\s*[–—-]\s*(\d+))?/gi;
+    /BHRC\s+(\d{1,2}),\s*(?:p\.?|pages?)\s*(\d+)(?:\s*[–—-]\s*(\d+))?/gi;
 
   for (const match of answer.matchAll(citationPattern)) {
     const meetingNumber = Number(match[1]);

@@ -1,5 +1,295 @@
 [
   {
+    "file": "bhrc-1-2018-03-01.pdf",
+    "id": "bhrc-1",
+    "meetingNumber": 1,
+    "meetingLabel": "1st BHRC Meeting",
+    "date": "March 1, 2018",
+    "isoDate": "2018-03-01",
+    "pageCount": 4,
+    "href": "/documents/bhrc-1-2018-03-01.pdf"
+  },
+  {
+    "file": "bhrc-2-2018-05-28.pdf",
+    "id": "bhrc-2",
+    "meetingNumber": 2,
+    "meetingLabel": "2nd BHRC Meeting",
+    "date": "May 28, 2018",
+    "isoDate": "2018-05-28",
+    "pageCount": 4,
+    "href": "/documents/bhrc-2-2018-05-28.pdf"
+  },
+  {
+    "file": "bhrc-3-2018-09-17.pdf",
+    "id": "bhrc-3",
+    "meetingNumber": 3,
+    "meetingLabel": "3rd BHRC Meeting",
+    "date": "September 17, 2018",
+    "isoDate": "2018-09-17",
+    "pageCount": 4,
+    "href": "/documents/bhrc-3-2018-09-17.pdf"
+  },
+  {
+    "file": "bhrc-4-2018-11-15.pdf",
+    "id": "bhrc-4",
+    "meetingNumber": 4,
+    "meetingLabel": "4th BHRC Meeting",
+    "date": "November 15, 2018",
+    "isoDate": "2018-11-15",
+    "pageCount": 3,
+    "href": "/documents/bhrc-4-2018-11-15.pdf"
+  },
+  {
+    "file": "bhrc-5-2019-03-31.pdf",
+    "id": "bhrc-5",
+    "meetingNumber": 5,
+    "meetingLabel": "5th BHRC Meeting",
+    "date": "March 31, 2019",
+    "isoDate": "2019-03-31",
+    "pageCount": 4,
+    "href": "/documents/bhrc-5-2019-03-31.pdf"
+  },
+  {
+    "file": "bhrc-6-2019-06-24.pdf",
+    "id": "bhrc-6",
+    "meetingNumber": 6,
+    "meetingLabel": "6th BHRC Meeting",
+    "date": "June 24, 2019",
+    "isoDate": "2019-06-24",
+    "pageCount": 3,
+    "href": "/documents/bhrc-6-2019-06-24.pdf"
+  },
+  {
+    "file": "bhrc-7-2019-09-11.pdf",
+    "id": "bhrc-7",
+    "meetingNumber": 7,
+    "meetingLabel": "7th BHRC Meeting",
+    "date": "September 11, 2019",
+    "isoDate": "2019-09-11",
+    "pageCount": 4,
+    "href": "/documents/bhrc-7-2019-09-11.pdf"
+  },
+  {
+    "file": "bhrc-8-2019-12-02.pdf",
+    "id": "bhrc-8",
+    "meetingNumber": 8,
+    "meetingLabel": "8th BHRC Meeting",
+    "date": "December 2, 2019",
+    "isoDate": "2019-12-02",
+    "pageCount": 4,
+    "href": "/documents/bhrc-8-2019-12-02.pdf"
+  },
+  {
+    "file": "bhrc-9-2020-03-24.pdf",
+    "id": "bhrc-9",
+    "meetingNumber": 9,
+    "meetingLabel": "9th BHRC Meeting",
+    "date": "March 24, 2020",
+    "isoDate": "2020-03-24",
+    "pageCount": 4,
+    "href": "/documents/bhrc-9-2020-03-24.pdf"
+  },
+  {
+    "file": "bhrc-10-2020-05-25.pdf",
+    "id": "bhrc-10",
+    "meetingNumber": 10,
+    "meetingLabel": "10th BHRC Meeting",
+    "date": "May 25, 2020",
+    "isoDate": "2020-05-25",
+    "pageCount": 2,
+    "href": "/documents/bhrc-10-2020-05-25.pdf"
+  },
+  {
+    "file": "bhrc-11-2020-06-29.pdf",
+    "id": "bhrc-11",
+    "meetingNumber": 11,
+    "meetingLabel": "11th BHRC Meeting",
+    "date": "June 29, 2020",
+    "isoDate": "2020-06-29",
+    "pageCount": 4,
+    "href": "/documents/bhrc-11-2020-06-29.pdf"
+  },
+  {
+    "file": "bhrc-12-2020-09-28.pdf",
+    "id": "bhrc-12",
+    "meetingNumber": 12,
+    "meetingLabel": "12th BHRC Meeting",
+    "date": "September 28, 2020",
+    "isoDate": "2020-09-28",
+    "pageCount": 4,
+    "href": "/documents/bhrc-12-2020-09-28.pdf"
+  },
+  {
+    "file": "bhrc-13-2020-12-14.pdf",
+    "id": "bhrc-13",
+    "meetingNumber": 13,
+    "meetingLabel": "13th BHRC Meeting",
+    "date": "December 14, 2020",
+    "isoDate": "2020-12-14",
+    "pageCount": 5,
+    "href": "/documents/bhrc-13-2020-12-14.pdf"
+  },
+  {
+    "file": "bhrc-14-2021-03-29.pdf",
+    "id": "bhrc-14",
+    "meetingNumber": 14,
+    "meetingLabel": "14th BHRC Meeting",
+    "date": "March 29, 2021",
+    "isoDate": "2021-03-29",
+    "pageCount": 5,
+    "href": "/documents/bhrc-14-2021-03-29.pdf"
+  },
+  {
+    "file": "bhrc-15-2021-06-28.pdf",
+    "id": "bhrc-15",
+    "meetingNumber": 15,
+    "meetingLabel": "15th BHRC Meeting",
+    "date": "June 28, 2021",
+    "isoDate": "2021-06-28",
+    "pageCount": 5,
+    "href": "/documents/bhrc-15-2021-06-28.pdf"
+  },
+  {
+    "file": "bhrc-16-2021-09-22.pdf",
+    "id": "bhrc-16",
+    "meetingNumber": 16,
+    "meetingLabel": "16th BHRC Meeting",
+    "date": "September 22, 2021",
+    "isoDate": "2021-09-22",
+    "pageCount": 5,
+    "href": "/documents/bhrc-16-2021-09-22.pdf"
+  },
+  {
+    "file": "bhrc-17-2021-12-13.pdf",
+    "id": "bhrc-17",
+    "meetingNumber": 17,
+    "meetingLabel": "17th BHRC Meeting",
+    "date": "December 13, 2021",
+    "isoDate": "2021-12-13",
+    "pageCount": 5,
+    "href": "/documents/bhrc-17-2021-12-13.pdf"
+  },
+  {
+    "file": "bhrc-18-2022-03-11.pdf",
+    "id": "bhrc-18",
+    "meetingNumber": 18,
+    "meetingLabel": "18th BHRC Meeting",
+    "date": "March 11, 2022",
+    "isoDate": "2022-03-11",
+    "pageCount": 5,
+    "href": "/documents/bhrc-18-2022-03-11.pdf"
+  },
+  {
+    "file": "bhrc-19-2022-06-22.pdf",
+    "id": "bhrc-19",
+    "meetingNumber": 19,
+    "meetingLabel": "19th BHRC Meeting",
+    "date": "June 22, 2022",
+    "isoDate": "2022-06-22",
+    "pageCount": 4,
+    "href": "/documents/bhrc-19-2022-06-22.pdf"
+  },
+  {
+    "file": "bhrc-20-2022-09-15.pdf",
+    "id": "bhrc-20",
+    "meetingNumber": 20,
+    "meetingLabel": "20th BHRC Meeting",
+    "date": "September 15, 2022",
+    "isoDate": "2022-09-15",
+    "pageCount": 4,
+    "href": "/documents/bhrc-20-2022-09-15.pdf"
+  },
+  {
+    "file": "bhrc-21-2022-12-07.pdf",
+    "id": "bhrc-21",
+    "meetingNumber": 21,
+    "meetingLabel": "21st BHRC Meeting",
+    "date": "December 7, 2022",
+    "isoDate": "2022-12-07",
+    "pageCount": 5,
+    "href": "/documents/bhrc-21-2022-12-07.pdf"
+  },
+  {
+    "file": "bhrc-22-2023-04-24.pdf",
+    "id": "bhrc-22",
+    "meetingNumber": 22,
+    "meetingLabel": "22nd BHRC Meeting",
+    "date": "April 24, 2023",
+    "isoDate": "2023-04-24",
+    "pageCount": 6,
+    "href": "/documents/bhrc-22-2023-04-24.pdf"
+  },
+  {
+    "file": "bhrc-23-2023-05-29.pdf",
+    "id": "bhrc-23",
+    "meetingNumber": 23,
+    "meetingLabel": "23rd BHRC Meeting",
+    "date": "May 29, 2023",
+    "isoDate": "2023-05-29",
+    "pageCount": 4,
+    "href": "/documents/bhrc-23-2023-05-29.pdf"
+  },
+  {
+    "file": "bhrc-24-2023-09-13.pdf",
+    "id": "bhrc-24",
+    "meetingNumber": 24,
+    "meetingLabel": "24th BHRC Meeting",
+    "date": "September 13, 2023",
+    "isoDate": "2023-09-13",
+    "pageCount": 5,
+    "href": "/documents/bhrc-24-2023-09-13.pdf"
+  },
+  {
+    "file": "bhrc-25-2023-11-27.pdf",
+    "id": "bhrc-25",
+    "meetingNumber": 25,
+    "meetingLabel": "25th BHRC Meeting",
+    "date": "November 27, 2023",
+    "isoDate": "2023-11-27",
+    "pageCount": 6,
+    "href": "/documents/bhrc-25-2023-11-27.pdf"
+  },
+  {
+    "file": "bhrc-26-2024-03-21.pdf",
+    "id": "bhrc-26",
+    "meetingNumber": 26,
+    "meetingLabel": "26th BHRC Meeting",
+    "date": "March 21, 2024",
+    "isoDate": "2024-03-21",
+    "pageCount": 5,
+    "href": "/documents/bhrc-26-2024-03-21.pdf"
+  },
+  {
+    "file": "bhrc-27-2024-06-21.pdf",
+    "id": "bhrc-27",
+    "meetingNumber": 27,
+    "meetingLabel": "27th BHRC Meeting",
+    "date": "June 21, 2024",
+    "isoDate": "2024-06-21",
+    "pageCount": 6,
+    "href": "/documents/bhrc-27-2024-06-21.pdf"
+  },
+  {
+    "file": "bhrc-28-2024-08-28.pdf",
+    "id": "bhrc-28",
+    "meetingNumber": 28,
+    "meetingLabel": "28th BHRC Meeting",
+    "date": "August 28, 2024",
+    "isoDate": "2024-08-28",
+    "pageCount": 6,
+    "href": "/documents/bhrc-28-2024-08-28.pdf"
+  },
+  {
+    "file": "bhrc-29-2024-12-06.pdf",
+    "id": "bhrc-29",
+    "meetingNumber": 29,
+    "meetingLabel": "29th BHRC Meeting",
+    "date": "December 6, 2024",
+    "isoDate": "2024-12-06",
+    "pageCount": 6,
+    "href": "/documents/bhrc-29-2024-12-06.pdf"
+  },
+  {
     "file": "bhrc-30-2025-03-19.pdf",
     "id": "bhrc-30",
     "meetingNumber": 30,
